@@ -5,7 +5,6 @@ function setup() {
     createCanvas(w, h);
     
     pg = createGraphics(w, h);
-    pg.background(220);
     pg.translate(width / 4, height / 4);
   
     let s_y = h - 600;
@@ -128,10 +127,11 @@ function D(sys, t) {
 
     return [w1, (-g * (2 * m1 + m2) * Math.sin(t1) - m2 * g * Math.sin(t1 - 2 * t2) - 2 * m2 * Math.sin(t1 - t2) * (w2 ** 2 * l2 + w1 ** 2 * l1 * Math.cos(t1 - t2))) / (l1 * (2 * m1 + m2 - m2 * Math.cos(2 * (t1 - t2)))), w2, (2 * Math.sin(t1 - t2) * (w1 ** 2 * l1 * (m1 + m2) + g * (m1 + m2) * Math.cos(t1) + w2 ** 2 * l2 * m2 * Math.cos(t1 - t2))) / (l2 * (2 * m1 + m2 - m2 * Math.cos(2 * (t1 - t2))))];
 }
-  
-  
+
+var frame = 1;
 function draw() {
   background(220);
+  pg.background(220, 220, 220, frame);
   image(pg, 0, 0);
   
   pre_vect = createVector(x2, y2);
@@ -173,7 +173,7 @@ function draw() {
     pg.line(pre_vect.x, pre_vect.y, vect.x, vect.y);  
   }
   
-
+  strokeWeight(1);
   vect1 = createVector(t1, w1);
   fill('red');
 
@@ -202,5 +202,5 @@ function draw() {
   stroke('gray');
   text('small bob', 150, 450); 
 
-
+  frame *= 1.0001;
 }
