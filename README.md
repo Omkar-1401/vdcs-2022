@@ -1,2 +1,2 @@
-# vdcs-2022
-Official repository for Horizon Project "Visualization and Dynamics of Chaotic Systems"
+# Visualisation and Dynamics of Chaotic Systems (2022)
+## Horizon IITM
